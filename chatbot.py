@@ -1,6 +1,6 @@
 from nba import nba_db
 from match import match
-from typing import List, Tuple, Callablle, Any
+from typing import List, Tuple, Callable, Any
 
 def get_name(player: Tuple[str, int, str, List[str]]) -> str:
 	return player[0]
@@ -41,34 +41,27 @@ def year_by_name(matches: List[str]) -> List[int]:
 			result.append(get_draftYear(player))
 	return result
 
-# def teams_by_name(matches: List[str]) -> List[str]:
-# 	"""Finds teams the player has played for
-# 	Args:
-# 		matches - a list of 1 string, just the player's name
-# 	Returns:
-# 		a list of teams the player has played for
-#     """
-#     name = matches[0]
-#     result = []
-#     for player in nba_db:
-#     	if get_name(player) == name:
-#     		result = get_teams(player)
-# 		    break
-# 	return result
+def teams_by_name(matches: List[str]) -> List[str]:
+	"""Finds teams the player has played for
+	Args:
+		matches - a list of 1 string, just the player's name
+	Returns:
+		a list of teams the player has played for
+    """
+	name = matches[0]
+	result = []
+	for player in nba_db:
+		if get_name(player) == name:
+			result = get_teams(player)
+			break
+	return result
+
+def bye_action(dummy: List[str]) -> None:
+    raise KeyboardInterrupt
 
 pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
     (str.split("what year was _ drafted"), year_by_name),
-    (str.split("what movies were made between _ and _"), title_by_year_range),
-    (str.split("what movies were made before _"), title_before_year),
-    (str.split("what movies were made after _"), title_after_year),
-    # note there are two valid patterns here two different ways to ask for the director
-    # of a movie
-    (str.split("who directed %"), director_by_title),
-    (str.split("who was the director of %"), director_by_title),
-    (str.split("what movies were directed by %"), title_by_director),
-    (str.split("who acted in %"), actors_by_title),
-    (str.split("when was % made"), year_by_title),
-    (str.split("in what movies did % appear"), title_by_actor),
+    (str.split("what team does % play for"), team_by_name),
     (["bye"], bye_action),
 ] # Every Tuple: (pattern, action_function)
 
@@ -115,5 +108,4 @@ if __name__ == "__main__":
 	assert sorted(year_by_name(["james harden"])) == sorted(
         [2009]
     ), "failed year_by_name test"
-	
-    #print("All tests passed!")
+	print("All tests passed!")
