@@ -1,0 +1,75 @@
+from typing import List, Tuple
+
+nba_db: List[Tuple[str, str, int, List[str]]] = [
+    (
+        "lebron james",
+        2003,
+        "los angeles lakers",
+        [
+            "miami heat",
+            "cleveland cavaliers",
+        ],
+    ),
+    (
+        "kyrie irving",
+        2011,
+        "dallas mavericks",
+        [
+            "brooklyn nets",
+            "cleveland cavaliers",
+            "boston celtics",
+        ],
+    ),
+    (
+        "seth curry",
+        2013,
+        "charlotte hornets",
+        [
+            "memphis grizzlies",
+            "cleveland cavaliers",
+            "phoneix suns",
+            "sacramento kings",
+            "dallas mavericks",
+            "philadelphia 76ers",
+            "brooklyn nets",
+        ],
+    ),
+    (
+        "james harden",
+        2009,
+        "los angleles clippers",
+        [
+            "oklahoma city thunder",
+            "houston rockets",
+            "brooklyn nets",
+            "philadelphia 76ers",
+        ],
+    ),
+    (
+        "kevin durant",
+        2007,
+        "houston rockets",
+        [
+            "oklahoma city thunder",
+            "golden state warriors",
+            "brooklyn nets",
+            "phoenix suns",
+        ],
+
+
+    ),
+    (
+        
+
+        "russel westbrook",
+        2008,
+        "denver nuggets",
+        [
+            "oklahoma city",
+            "Los angeles clippers",
+            "houston rockets",
+            "washington wizards",
+            "los angeles lakers",
+        ],
+    ),
+]
