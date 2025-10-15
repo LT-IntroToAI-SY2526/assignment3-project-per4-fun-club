@@ -62,7 +62,7 @@ nba_db: List[Tuple[str, str, int, List[str]]] = [
     (
         
 
-        "russel westbrook",
+        "russell westbrook",
         2008,
         "denver nuggets",
         [
