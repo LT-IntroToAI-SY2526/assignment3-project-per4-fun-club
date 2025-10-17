@@ -22,21 +22,22 @@ from nba_api.stats.endpoints import commonteamroster
 
 #-----------------------------------------------------------------
 
-def Get_Players_By_TeamID(ID)
-    status = False
+# def Get_Players_By_TeamID(team_id):
+#     status = False
 
-    team_list = teams.get_teams()
-    for team in team_list:
-        if ID == team['id']:
-            status = True
-            break
+#     team_list = teams.get_teams()
 
-    if status == True:
-        roster = commonteamroster.CommonTeamRoster(team_id=team_id)
-        df = roster.get_data_frames()[0]
-        return "Players on team: " + ", ".join(df['PLAYER'].tolist())
-    else:
-        return "No team found: No players on team"
+#     for team in team_list:
+#         if team_id == team['id']:
+#             status = True
+#             break
+
+#     if status == True:
+#         roster = commonteamroster.CommonTeamRoster(team_id=team_id)
+#         df = roster.get_data_frames()[0]
+#         return "Players on team: " + ", ".join(df['PLAYER'].tolist())
+#     else:
+#         return "No team found: No players on team"
 
 #----------------------------------------------------------------
 
