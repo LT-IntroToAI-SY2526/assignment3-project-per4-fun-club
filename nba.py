@@ -1,7 +1,7 @@
 #Player's name, list of priveous teams, current team, year drafted
 from typing import List, Tuple
 
-nba_db: List[Tuple[str, str, int, List[str]]] = [
+nba_db: List[Tuple[str, int, str, List[str]]] = [
     (
         "lebron james",
         2003,
