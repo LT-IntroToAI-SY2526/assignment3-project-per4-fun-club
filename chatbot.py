@@ -60,7 +60,7 @@ def bye_action(dummy: List[str]) -> None:
     raise KeyboardInterrupt 
 
 pa_list: List[Tuple[List[str], Callable[[List[str]], List[Any]]]] = [
-    (str.split("what year was _what drafted"), year_by_name),
+    (str.split("what year was % drafted"), year_by_name),
     (str.split("what team does % play for"), team_by_name),
     (str.split("what teams has % played for"), teams_by_name),
     (["bye"], bye_action),
